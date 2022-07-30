@@ -51,6 +51,7 @@ export default class Adapter {
   // Public
   connectionPromise;
   database;
+  _onchange: any;
 
   constructor({
     uri,
@@ -94,6 +95,7 @@ export default class Adapter {
       return sql;
     };
     this._databaseOptions = dbOptions;
+    this._onchange = () => {};
   }
 
   connect() {
@@ -947,6 +949,10 @@ export default class Adapter {
 
   updateSchemaWithIndexes() {
     return Promise.resolve(this);
+  }
+
+  watch(callback: () => void): void {
+    this._onchange = callback;
   }
 }
 
