@@ -76,7 +76,7 @@ const transformValue = (value) => {
 
 const toParseSchema = (schema) => {
   if (schema.className === '_User') {
-    delete schema.fields._hashed_password;
+    // delete schema.fields._hashed_password;
   }
   if (schema.fields) {
     delete schema.fields._wperm;
