@@ -32,11 +32,11 @@ function getDatabaseOptionsFromURI(uri) {
   databaseOptions.password = authParts.length > 1 ? authParts[1] : '';
 
   databaseOptions.ssl = queryParams.ssl && queryParams.ssl.toLowerCase() === 'true';
-  databaseOptions.binary = queryParams.binary && queryParams.binary.toLowerCase() === 'true';
+  // databaseOptions.binary = queryParams.binary && queryParams.binary.toLowerCase() === 'true';
 
-  databaseOptions.client_encoding = queryParams.client_encoding;
-  databaseOptions.application_name = queryParams.application_name;
-  databaseOptions.fallback_application_name = queryParams.fallback_application_name;
+  // databaseOptions.client_encoding = queryParams.client_encoding;
+  // databaseOptions.application_name = queryParams.application_name;
+  // databaseOptions.fallback_application_name = queryParams.fallback_application_name;
 
   if (queryParams.poolSize) {
     databaseOptions.poolSize = parseInt(queryParams.poolSize, 10) || 10;
